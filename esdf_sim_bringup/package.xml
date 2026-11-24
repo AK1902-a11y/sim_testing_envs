@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>esdf_sim_bringup</name>
+  <version>0.1.0</version>
+  <description>Launch files and RViz configs that tie esdf_sim_description and esdf_sim_worlds together (later: SLAM, localization, Nav2).</description>
+  <maintainer email="akshatsrivastava1902@gmail.com">Akshat</maintainer>
+  <license>Apache-2.0</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <exec_depend>esdf_sim_description</exec_depend>
+  <exec_depend>esdf_sim_worlds</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>nav2_msgs</exec_depend>
+  <exec_depend>std_srvs</exec_depend>
+  <exec_depend>action_msgs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <export><build_type>ament_cmake</build_type></export>
+</package>

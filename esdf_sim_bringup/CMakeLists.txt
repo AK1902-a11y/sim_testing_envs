@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.8)
+project(esdf_sim_bringup)
+find_package(ament_cmake REQUIRED)
+install(DIRECTORY launch rviz config maps DESTINATION share/${PROJECT_NAME}/)
+install(PROGRAMS scripts/sim_gui.py scripts/route_runner.py DESTINATION lib/${PROJECT_NAME})
+ament_package()

@@ -1,0 +1,25 @@
+# Single source of truth for esdf_bot dimensions. Read by the xacro via
+# xacro.load_yaml (see urdf/esdf_bot.urdf.xacro) so Nav2 params can be kept in sync.
+esdf_bot:
+  radius: 0.22            # footprint radius [m]
+  chassis_height: 0.20    # [m]
+  ground_clearance: 0.04  # chassis underside above ground [m]
+  chassis_mass: 10.0      # [kg]
+  wheel_radius: 0.075
+  wheel_width: 0.04
+  wheel_separation: 0.36  # centre-to-centre [m] (geometry)
+  # Value given to the DiffDrive plugin. Measured against /ground_truth/odom: with 0.36 the odometry
+  # under-reported in-place rotation by ~12% (170.7 deg reported vs 191.5 deg true for a 172 deg command),
+  # which broke SLAM scan matching. Re-calibrate if the wheel geometry changes.
+  odom_wheel_separation: 0.321
+  wheel_mass: 0.8
+  caster_radius: 0.03
+  caster_x: 0.15          # caster offset front/back [m]
+  caster_mass: 0.1
+  lidar:
+    rate: 20.0            # [Hz] scan rate (was 10); costmap update_frequency above this sees repeated scans
+    samples: 720
+    min_range: 0.05
+    max_range: 10.0
+    noise_stddev: 0.0     # overridden by the lidar_noise launch argument
+  max_speed: 2.0          # informational; real limits live in the controller config
